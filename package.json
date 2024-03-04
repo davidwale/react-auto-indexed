@@ -1,14 +1,14 @@
 {
   "name": "react-auto-indexed",
-  "version": "0.0.1",
+  "version": "1.0.3",
   "description": "Enhance textareas with automatic line numbering and array value handling for better organization and reference.",
   "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.js",
   "scripts": {
-    "test": "jest",
-    "build": "webpack --mode production"
-  },
+  "build:js": "babel index.js -d dist --presets=@babel/preset-react",
+  "build:css": "copy styles.css dist",
+  "build": "npm run build:js && npm run build:css",
+  "prepublishOnly": "npm run build"
+},
   "keywords": [
     "react",
     "numbering",
@@ -25,25 +25,15 @@
     "type": "git",
     "url": "https://github.com/davidwale/react-auto-indexed.git"
   },
-  "devDependencies": {
-    "@babel/core": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "babel-loader": "^8.0.0",
-    "webpack": "^5.0.0",
-    "webpack-cli": "^4.0.0",
-    "react-refresh": "^0.8.0",
-    "@babel/preset-react": "^7.0.0",
-    "eslint": "^7.0.0",
-    "prettier": "^2.0.0",
-    "eslint-plugin-react": "^7.0.0",
-    "jest": "^26.0.0",
-    "react-testing-library": "^11.0.0",
-    "typescript": "^4.0.0",
-    "@types/react": "^17.0.0",
-    "webpack-dev-server": "^3.0.0"
-  },
   "peerDependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.23.9",
+    "@babel/core": "^7.24.0",
+    "@babel/plugin-syntax-jsx": "^7.23.3",
+    "@babel/preset-env": "^7.24.0",
+    "@babel/preset-react": "^7.23.3"
   }
 }

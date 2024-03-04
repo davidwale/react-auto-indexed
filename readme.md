@@ -6,11 +6,11 @@ Enhance textareas with automatic line numbering and array value handling for bet
 
 You can install the package via npm or yarn:
 
-
-`npm install react-auto-indexed`
+```bash
+npm install react-auto-indexed
     or
-`yarn add react-auto-indexed`
-
+yarn add react-auto-indexed
+```
 ## Usage
 
 ```bash
